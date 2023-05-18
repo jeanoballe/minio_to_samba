@@ -3,6 +3,10 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# json
+*.json
+files_history/
+
 # C extensions
 *.so
 
