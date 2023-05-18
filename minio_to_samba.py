@@ -35,7 +35,7 @@ def main():
 
     try:
         files_folder = "files_history/"
-        # Listamos los archivos en la carpeta local "edifacts"
+        # Listamos los archivos en la carpeta local "files_history"
         files_in_folder = os.listdir(files_folder)
 
         # Creamos el objeto que representa la carpeta en MinIO
@@ -54,7 +54,7 @@ def main():
         s = set(files_in_folder)
         new_list = [x for x in files_in_minio if x not in s]
 
-        print(f"[+] Se descargaran {len(new_list)} archivos a la carpeta 'edifacts/'...")
+        print(f"[+] Se descargaran {len(new_list)} archivos a la carpeta 'files_history/'...")
         objects = client.list_objects(settings['minio']['folder'])
         for item in objects:
             # Descargamos el archivo en la carpeta "files_history"
